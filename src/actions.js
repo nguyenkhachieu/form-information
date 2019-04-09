@@ -1,10 +1,8 @@
-import { FETCH_API, SUBMIT_DATA, ERROR_FIELD } from './constants';
-
-export const getApi = () => {
-    return {
-      type : FETCH_API,
-    }
-}
+import { 
+  SUBMIT_DATA,
+  ERROR_FIELD,
+  SUBMIT_DATA_SUCCESS,
+} from './constants';
 
 export const submitForm = (data) => {
   return {
@@ -18,4 +16,11 @@ export const inputFieldErrors = (errorField) => {
     type : ERROR_FIELD,
     errorField,
   }
+}
+
+export const submitFormSuccess = (data) => {
+    return {
+      type : SUBMIT_DATA_SUCCESS,
+      params: data,
+    }
 }

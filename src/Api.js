@@ -3,12 +3,6 @@ const headers = {
   "Content-Type": "application/json",
 }
 
-export const GetApi = () => {
-    return fetch(apiForm)
-      .then(response => response.json())
-      .then(data => data);
-}
-
 export const submitFormApi = (value) => {
   return fetch(apiForm, {
     method: 'post',

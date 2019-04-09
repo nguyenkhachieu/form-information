@@ -1,33 +1,31 @@
 import styled from 'styled-components';
+import Color from './colors';
 
 export const StyleForm = styled.div`
-  width: 50%;
   height: 100%;
-  margin: 0 auto;
-  padding: 2rem;
+  margin: 5rem;
   font-size: 1.4rem;
   
   .form-block {
-    // text-align: center;
     .form-item {
       padding: 1rem 0;
     }
 
     label {
-      color: #999;
+      color: ${Color.grey};
       cursor: pointer;
       font-size: 14px;
+      transition: 0.3s;
+
+      &:hover {
+        opacity: 0.8;
+      }
     }
 
-    input {
-      width: 50%;
-      // margin-left: 1rem;
+    input, textarea {
+      width: 36rem;
       padding: 1rem;
-      border: 1px solid #999;
-      
-      &:focus {
-        outline: 0;
-      }
+      border: 1px solid ${Color.grey};
     }
 
     .input-name {
@@ -40,16 +38,16 @@ export const StyleForm = styled.div`
 
     .id-card {
       padding: 1rem;
-      background-color: #999;
-      color: #fff;
+      background-color: ${Color.grey};
+      color: ${Color.white};
     }
 
     .block-img {
       position: relative;
-      width: 30rem;
-      height: 30rem;
+      width: 20rem;
+      height: 20rem;
       margin: 2rem 0;
-      border: 1px solid #999;
+      border: 1px solid ${Color.grey};
       overflow: hidden;
 
       img {
@@ -60,7 +58,7 @@ export const StyleForm = styled.div`
       .btn-close {
         position: absolute;
         z-index: 1000;
-        background: #fff;
+        background: ${Color.white};
         width: 3rem;
         height: 3rem;
         top: 0;
@@ -69,7 +67,7 @@ export const StyleForm = styled.div`
         padding: 0;
         margin: 0;
         font-size: 1.8rem;
-        color: #000;
+        color: ${Color.black};
         cursor: pointer;
         border: 0;
 
@@ -80,26 +78,46 @@ export const StyleForm = styled.div`
     }
 
     .error {
-      color: red;
+      color: ${Color.red};
 
       &-input {
-        border: 1px solid red;
+        border: 1px solid ${Color.red};
       }
     }
   }
 
   .btn-block {
     .btn {
-      width: 25rem;
-      height: 3rem;
+      width: 18.6rem;
+      height: 4rem;
+      font-size: 1.5rem;
       border: 0;
-      background-color: #999;
-      margin: 0 1rem;
-      color: #fff;
+      background-color: ${Color.grey};
+      margin-right: 1rem;
+      color: ${Color.white};
       cursor: pointer;
+      transition: 0.3s;
 
       &:focus {
         outline: 0;
+      }
+
+      :hover {
+        opacity: 0.8;
+      }
+    }
+  }
+  
+  @media only screen and (max-width: 480px) {
+    .form-block {
+      input, textarea {
+        width: 23rem;
+      }
+    }
+    
+    .btn-block {
+      .btn {
+        margin-top: 1rem;
       }
     }
   }
